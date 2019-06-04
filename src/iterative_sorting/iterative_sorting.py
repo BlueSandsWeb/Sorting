@@ -4,11 +4,8 @@ def selection_sort( arr ):
     for i in range(0, len(arr)):
         cur_index = i
         smallest_index = cur_index
-        print("smallest_index: ", smallest_index)
-        print("loop: ", cur_index)
         # Look for smallest value
         for j in range(i, len(arr)):
-            print("j: ", j)
             if arr[j] < arr[smallest_index]:
                 # store smallest value index
                 smallest_index = j
@@ -18,7 +15,6 @@ def selection_sort( arr ):
         #swap values
         arr[i] = smallest_val
         arr[smallest_index] = cur_val
-        print(arr)
     return arr
 
 print(selection_sort([2, 4, 3, 1]))
