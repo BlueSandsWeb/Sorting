@@ -14,11 +14,11 @@ def merge(arrA, arrB):
         elif len(arrB) > 0:
             merged_arr[i] = arrB.pop(0)
 
-    print(merged_arr)
+    # print(merged_arr)
     return merged_arr
 
 
-merge([0, 2, 4, 6, 8], [1, 3, 5, 7, 9])
+# merge([0, 2, 4, 6, 8], [1, 3, 5, 7, 9])
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 
@@ -29,14 +29,24 @@ def merge_sort(arr):
         return arr
     else:
         pivot = round(len(arr)/2)
-        merge_sort()
+        left = merge_sort(arr[:pivot])
+        print("left: ", left)
+        right = merge_sort(arr[pivot:])
+        print("right: ", right)
 
-        return arr
+        new_arr = merge(left, right)
+        print("new_arr: ", new_arr)
+        return new_arr
 
 
-merge_sort([2, 5, 7, 3, 1, 4, 6])
+# print("Merge sort end: ", merge_sort([2, 5, 7, 3, 1, 4, 6]))
 
 # STRETCH: implement an in-place merge sort algorithm
+
+
+test_array = [1, 2, 3, 4]
+test_array[0], test_array[1] = test_array[1], test_array[0]
+print(test_array)
 
 
 def merge_in_place(arr, start, mid, end):
